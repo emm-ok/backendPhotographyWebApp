@@ -1,0 +1,59 @@
+# =========================
+# Node modules
+# =========================
+node_modules/
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Build / Output
+# =========================
+dist/
+build/
+*.tsbuildinfo
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.development.local
+.env.production.local
+.env.*.local
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.swp
+
+# =========================
+# Images & uploads (if stored locally)
+# =========================
+uploads/
+public/uploads/
+
+# =========================
+# Coverage reports (if using testing)
+# =========================
+coverage/
+
+# =========================
+# IDE / Editor files
+# =========================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
