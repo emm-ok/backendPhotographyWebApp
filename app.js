@@ -20,7 +20,7 @@ import dashboardRouter from './modules/dashboard/dashboard.routes.js'
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: env.CLIENT_URL,
     credentials: true,
 }));
 app.use((req, res, next) => {
