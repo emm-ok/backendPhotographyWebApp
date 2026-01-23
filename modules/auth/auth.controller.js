@@ -184,7 +184,7 @@ export const refreshToken = async (req, res) => {
 
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
-      secure: isProd,
+      secure: true,
       sameSite: isProd ? "None" : "Lax",
       path: "/",
       maxAge: 15 * 60 * 1000, // 15 mins
@@ -217,7 +217,7 @@ export const googleCallback = async (req, res) => {
 
   res.cookie("accessToken", accessToken, {
     httpOnly: true,
-    secure: isProd,
+    secure: true,
     sameSite: isProd ? "None" : "Lax",
     path: "/",
     maxAge: 15 * 60 * 1000,
