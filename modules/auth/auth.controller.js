@@ -53,7 +53,7 @@ export const register = async (req, res, next) => {
       secure: isProd,
       sameSite: isProd ? "None" : "Lax",
       path: "/",
-      maxAge: 15 * 60 * 1000, // 15 mins for access token
+      maxAge: 30 * 60 * 1000, // 30 mins for access token
     });
 
     res.cookie("refreshToken", refreshToken, {
@@ -115,7 +115,7 @@ export const login = async (req, res, next) => {
       secure: isProd,
       sameSite: isProd ? "None" : "Lax",
       path: "/",
-      maxAge: 15 * 60 * 1000, // 15 mins
+      maxAge: 30 * 60 * 1000, // 30 mins
     });
 
     res.cookie("refreshToken", refreshToken, {
@@ -147,14 +147,14 @@ export const login = async (req, res, next) => {
 // ------------------- LOGOUT -------------------
 export const logout = async (req, res, next) => {
   try {
-    res.clearCookie("accessToken", {
+    res.clearCookie("accessToken", "", {
       httpOnly: true,
       secure: env.NODE_ENV === "production",
       sameSite: env.NODE_ENV === "production" ? "None" : "Lax",
       path: "/",
     });
 
-    res.clearCookie("refreshToken", {
+    res.clearCookie("refreshToken", "", {
       httpOnly: true,
       secure: env.NODE_ENV === "production",
       sameSite: env.NODE_ENV === "production" ? "None" : "Lax",
@@ -220,7 +220,7 @@ export const googleCallback = async (req, res) => {
     secure: true,
     sameSite: isProd ? "None" : "Lax",
     path: "/",
-    maxAge: 15 * 60 * 1000,
+    maxAge: 30 * 60 * 1000,
   });
 
   res.cookie("refreshToken", refreshToken, {

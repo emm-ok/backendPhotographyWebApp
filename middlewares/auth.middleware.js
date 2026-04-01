@@ -4,8 +4,8 @@ import { env } from "../config/env.js";
 
 export const protect = async (req, res, next) => {
   try {
-    console.log("Cookies received:", req.cookies);
-    console.log("Headers:", req.headers);
+    // console.log("Cookies received:", req.cookies);
+    // console.log("Headers:", req.headers);
     const token = req.cookies?.accessToken;
 
     if (!token) {

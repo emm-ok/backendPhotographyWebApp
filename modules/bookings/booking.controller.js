@@ -150,12 +150,16 @@ export const cancelBooking = async (req, res) => {
 export const getAllBookings = async (req, res) => {
   const bookings = await Booking.find()
     .populate("user", "name email image")
-    .populate("package");
+    .populate({
+      path: "package",
+      match: { _id: { $exists: true } }
+    })
+    .lean();
 
   res.json({
     success: true,
     count: bookings.length,
-    bookings,
+    bookings: bookings.filter(b => b.package),
   });
 };
 
